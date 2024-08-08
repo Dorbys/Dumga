@@ -1,0 +1,92 @@
+[gd_scene load_steps=10 format=3 uid="uid://v616n0nwq4l4"]
+
+[ext_resource type="Script" path="res://Scripts/Input.gd" id="1_5y0fk"]
+[ext_resource type="PackedScene" uid="uid://5tkisp7kb6dq" path="res://Scenes/ProgressBarManager.tscn" id="1_yuapw"]
+[ext_resource type="Texture2D" uid="uid://bm1qeedqymnvk" path="res://Assets/Textures/Texture1.jpg" id="2_8rh03"]
+[ext_resource type="Texture2D" uid="uid://c8pq6k3quy3ur" path="res://Assets/UI/tldr.jpg" id="2_unx66"]
+[ext_resource type="Texture2D" uid="uid://drc53nrkbh3ud" path="res://Assets/UI/Obama-12782369-1-402.jpg" id="3_c5xog"]
+[ext_resource type="PackedScene" uid="uid://b75jmbwfjughr" path="res://Scenes/TurnPredictor.tscn" id="4_ttivp"]
+[ext_resource type="PackedScene" uid="uid://jvf6rloi2ddp" path="res://Scenes/Whos_turn.tscn" id="6_14ql3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_58t8b"]
+font_size = 56
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5snye"]
+font_size = 48
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[node name="B" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_5y0fk")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -4096
+layout_mode = 0
+offset_right = 1919.0
+offset_bottom = 1083.0
+texture = ExtResource("2_8rh03")
+
+[node name="Manager" parent="." instance=ExtResource("1_yuapw")]
+layout_mode = 0
+offset_left = 503.0
+offset_top = 256.0
+offset_right = 1663.0
+offset_bottom = 416.0
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 32.0
+offset_right = 375.0
+offset_bottom = 319.0
+texture_normal = ExtResource("2_unx66")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 214.0
+offset_right = 269.0
+offset_bottom = 294.0
+text = "STOP/GO"
+label_settings = SubResource("LabelSettings_58t8b")
+
+[node name="Starter" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 412.0
+offset_top = 37.0
+offset_right = 622.0
+offset_bottom = 237.0
+texture_normal = ExtResource("3_c5xog")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Starter"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 133.0
+offset_right = 280.0
+offset_bottom = 213.0
+text = "START"
+label_settings = SubResource("LabelSettings_5snye")
+
+[node name="Whos_turn" parent="." instance=ExtResource("6_14ql3")]
+layout_mode = 0
+offset_left = 727.0
+offset_right = 1427.0
+
+[node name="PredictRect" parent="." instance=ExtResource("4_ttivp")]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 517.0
+offset_right = 1890.0
+offset_bottom = 1057.0
+
+[node name="UI_layer" type="CanvasLayer" parent="."]
+
+[connection signal="pressed" from="TextureButton" to="Manager" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Starter" to="Manager" method="_on_starter_pressed"]

@@ -1,0 +1,854 @@
+[gd_scene load_steps=18 format=3 uid="uid://dnbcpuahmn205"]
+
+[ext_resource type="Script" path="res://Scripts/Character_sheet.gd" id="1_7e0fa"]
+[ext_resource type="Script" path="res://Scripts/Input.gd" id="1_gjxyj"]
+[ext_resource type="Texture2D" uid="uid://cph8q4w2xvgq3" path="res://Assets/Textures/BCG.jpg" id="1_mmu05"]
+[ext_resource type="Texture2D" uid="uid://bc5kwb8252nhd" path="res://Assets/pfps/RANDOM9.jpg" id="3_3elle"]
+[ext_resource type="Texture2D" uid="uid://bed43dceljago" path="res://Assets/Progress_bars/White_progress_bar.png" id="4_bdcn7"]
+[ext_resource type="LabelSettings" uid="uid://mecftbv8j1xu" path="res://Labelss/Character_sheet/Bar_label.tres" id="5_25asi"]
+[ext_resource type="LabelSettings" uid="uid://cvikmxkolc8sf" path="res://Labelss/Character_sheet/Section_title.tres" id="6_c0laq"]
+[ext_resource type="Texture2D" uid="uid://barl6juac5va1" path="res://Assets/Tables/stats2.png" id="6_ryeug"]
+[ext_resource type="LabelSettings" uid="uid://d4n3ks3aqe1b1" path="res://Labelss/Character_sheet/Section_text.tres" id="7_xkfdm"]
+[ext_resource type="Texture2D" uid="uid://b1sg1rmi1cw4w" path="res://Assets/Tables/Atributy.png" id="9_mqjwb"]
+[ext_resource type="Texture2D" uid="uid://dmmy7bxi5qmdb" path="res://Assets/Tables/Zbranove_dovednosti.png" id="10_avk1q"]
+[ext_resource type="Texture2D" uid="uid://jxdcopyeafko" path="res://Assets/Textures/White_texture.jpg" id="11_o70p5"]
+[ext_resource type="FontFile" uid="uid://bkk7qojyfn73f" path="res://Fonts/RobotoMono-Italic.ttf" id="12_iptwb"]
+[ext_resource type="Texture2D" uid="uid://ds11650d3b3b3" path="res://Assets/UI/Pass_texture_edge.jpg" id="14_0bmvp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7k5ad"]
+font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_jc0ni"]
+font = ExtResource("12_iptwb")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_18m6g"]
+font_size = 50
+
+[node name="Character_sheet" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7e0fa")
+
+[node name="BCG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_mmu05")
+expand_mode = 1
+script = ExtResource("1_gjxyj")
+
+[node name="PFP_and_bars" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 35.0
+offset_right = 419.0
+offset_bottom = 636.0
+
+[node name="PFP" type="TextureButton" parent="PFP_and_bars"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+texture_normal = ExtResource("3_3elle")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="character_name" type="Label" parent="PFP_and_bars"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "Name"
+label_settings = SubResource("LabelSettings_7k5ad")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HP_panel" type="PanelContainer" parent="PFP_and_bars"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HP_bar" type="TextureProgressBar" parent="PFP_and_bars/HP_panel"]
+layout_mode = 2
+size_flags_vertical = 3
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("4_bdcn7")
+texture_progress = ExtResource("4_bdcn7")
+tint_progress = Color(0.713726, 0.0431373, 0, 1)
+
+[node name="HP" type="Label" parent="PFP_and_bars/HP_panel"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100/100"
+label_settings = ExtResource("5_25asi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mana_panel" type="PanelContainer" parent="PFP_and_bars"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Mana_bar" type="TextureProgressBar" parent="PFP_and_bars/Mana_panel"]
+layout_mode = 2
+size_flags_vertical = 3
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("4_bdcn7")
+texture_progress = ExtResource("4_bdcn7")
+tint_progress = Color(0, 0.505882, 0.964706, 1)
+
+[node name="MP" type="Label" parent="PFP_and_bars/Mana_panel"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100/100"
+label_settings = ExtResource("5_25asi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stamina_panel" type="PanelContainer" parent="PFP_and_bars"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Stamina_bar" type="TextureProgressBar" parent="PFP_and_bars/Stamina_panel"]
+layout_mode = 2
+size_flags_vertical = 3
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("4_bdcn7")
+texture_progress = ExtResource("4_bdcn7")
+tint_progress = Color(0.180392, 0.784314, 0.415686, 1)
+
+[node name="stamina" type="Label" parent="PFP_and_bars/Stamina_panel"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100/100"
+label_settings = ExtResource("5_25asi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Staty" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_left = 459.0
+offset_top = 104.0
+offset_right = 1063.0
+offset_bottom = 488.0
+
+[node name="Panel_bcg" type="TextureRect" parent="Staty"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("6_ryeug")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="Staty/Panel_bcg"]
+layout_mode = 2
+offset_top = -86.0
+offset_right = 592.0
+offset_bottom = -6.0
+text = "Staty"
+label_settings = ExtResource("6_c0laq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Vbox_container" type="VBoxContainer" parent="Staty"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="Hbox_DMG" type="HBoxContainer" parent="Staty/Vbox_container"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="Staty/Vbox_container/Hbox_DMG"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat_label" type="Label" parent="Staty/Vbox_container/Hbox_DMG"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+text = "Poškození zbraně"
+label_settings = ExtResource("7_xkfdm")
+vertical_alignment = 1
+
+[node name="poskozeni_zbrane" type="Label" parent="Staty/Vbox_container/Hbox_DMG"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "12
+"
+label_settings = ExtResource("7_xkfdm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxArm" type="HBoxContainer" parent="Staty/Vbox_container"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Staty/Vbox_container/HBoxArm"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat_label" type="Label" parent="Staty/Vbox_container/HBoxArm"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+text = "Brnění"
+label_settings = ExtResource("7_xkfdm")
+vertical_alignment = 1
+
+[node name="brneni" type="Label" parent="Staty/Vbox_container/HBoxArm"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "42%
+"
+label_settings = ExtResource("7_xkfdm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hbox_MR" type="HBoxContainer" parent="Staty/Vbox_container"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Staty/Vbox_container/Hbox_MR"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat_label" type="Label" parent="Staty/Vbox_container/Hbox_MR"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+text = "Magická odolnost"
+label_settings = ExtResource("7_xkfdm")
+vertical_alignment = 1
+
+[node name="magicka_odolnost" type="Label" parent="Staty/Vbox_container/Hbox_MR"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "-5%
+"
+label_settings = ExtResource("7_xkfdm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxRychlost" type="HBoxContainer" parent="Staty/Vbox_container"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Staty/Vbox_container/HBoxRychlost"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat_label" type="Label" parent="Staty/Vbox_container/HBoxRychlost"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+text = "Rychlost"
+label_settings = ExtResource("7_xkfdm")
+vertical_alignment = 1
+
+[node name="rychlost" type="Label" parent="Staty/Vbox_container/HBoxRychlost"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "3
+"
+label_settings = ExtResource("7_xkfdm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxPresnost" type="HBoxContainer" parent="Staty/Vbox_container"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Staty/Vbox_container/HBoxPresnost"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat_label" type="Label" parent="Staty/Vbox_container/HBoxPresnost"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+text = "Přesnost"
+label_settings = ExtResource("7_xkfdm")
+vertical_alignment = 1
+
+[node name="presnost" type="Label" parent="Staty/Vbox_container/HBoxPresnost"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "20%"
+label_settings = ExtResource("7_xkfdm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxUhyb" type="HBoxContainer" parent="Staty/Vbox_container"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Staty/Vbox_container/HBoxUhyb"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat_label" type="Label" parent="Staty/Vbox_container/HBoxUhyb"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+text = "Úhyb"
+label_settings = ExtResource("7_xkfdm")
+vertical_alignment = 1
+
+[node name="uhyb" type="Label" parent="Staty/Vbox_container/HBoxUhyb"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "136
+"
+label_settings = ExtResource("7_xkfdm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxCCR" type="HBoxContainer" parent="Staty/Vbox_container"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Staty/Vbox_container/HBoxCCR"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat_label" type="Label" parent="Staty/Vbox_container/HBoxCCR"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+text = "Odolnost vs omráčení"
+label_settings = ExtResource("7_xkfdm")
+vertical_alignment = 1
+
+[node name="CC_odolnost" type="Label" parent="Staty/Vbox_container/HBoxCCR"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "20%"
+label_settings = ExtResource("7_xkfdm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Atributy" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1502.0
+offset_top = 98.0
+offset_right = 1853.0
+offset_bottom = 536.0
+
+[node name="Panel_bcg" type="TextureRect" parent="Atributy"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("9_mqjwb")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="Atributy/Panel_bcg"]
+layout_mode = 2
+offset_top = -86.0
+offset_right = 351.0
+offset_bottom = -3.0
+text = "Atributy"
+label_settings = ExtResource("6_c0laq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Vbox_container" type="VBoxContainer" parent="Atributy"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="Hbox_Sila" type="HBoxContainer" parent="Atributy/Vbox_container"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="Atributy/Vbox_container/Hbox_Sila"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat_label" type="Label" parent="Atributy/Vbox_container/Hbox_Sila"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+text = "Síla"
+label_settings = ExtResource("7_xkfdm")
+vertical_alignment = 1
+
+[node name="sila" type="Label" parent="Atributy/Vbox_container/Hbox_Sila"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "12
+"
+label_settings = ExtResource("7_xkfdm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxObratnost" type="HBoxContainer" parent="Atributy/Vbox_container"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Atributy/Vbox_container/HBoxObratnost"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat_label" type="Label" parent="Atributy/Vbox_container/HBoxObratnost"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+text = "Obratnost"
+label_settings = ExtResource("7_xkfdm")
+vertical_alignment = 1
+
+[node name="obratnost" type="Label" parent="Atributy/Vbox_container/HBoxObratnost"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "42%
+"
+label_settings = ExtResource("7_xkfdm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hbox_Inteligence" type="HBoxContainer" parent="Atributy/Vbox_container"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Atributy/Vbox_container/Hbox_Inteligence"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat_label" type="Label" parent="Atributy/Vbox_container/Hbox_Inteligence"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+text = "Inteligence"
+label_settings = ExtResource("7_xkfdm")
+vertical_alignment = 1
+
+[node name="inteligence" type="Label" parent="Atributy/Vbox_container/Hbox_Inteligence"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "-5%
+"
+label_settings = ExtResource("7_xkfdm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxCharisma" type="HBoxContainer" parent="Atributy/Vbox_container"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Atributy/Vbox_container/HBoxCharisma"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat_label" type="Label" parent="Atributy/Vbox_container/HBoxCharisma"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+text = "Charisma"
+label_settings = ExtResource("7_xkfdm")
+vertical_alignment = 1
+
+[node name="charisma" type="Label" parent="Atributy/Vbox_container/HBoxCharisma"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "3
+"
+label_settings = ExtResource("7_xkfdm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxVydrz" type="HBoxContainer" parent="Atributy/Vbox_container"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Atributy/Vbox_container/HBoxVydrz"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat_label" type="Label" parent="Atributy/Vbox_container/HBoxVydrz"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+text = "Výdrž"
+label_settings = ExtResource("7_xkfdm")
+vertical_alignment = 1
+
+[node name="vydrz" type="Label" parent="Atributy/Vbox_container/HBoxVydrz"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "20%"
+label_settings = ExtResource("7_xkfdm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxStesti" type="HBoxContainer" parent="Atributy/Vbox_container"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Atributy/Vbox_container/HBoxStesti"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat_label" type="Label" parent="Atributy/Vbox_container/HBoxStesti"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+text = "Štěstí"
+label_settings = ExtResource("7_xkfdm")
+vertical_alignment = 1
+
+[node name="stesti" type="Label" parent="Atributy/Vbox_container/HBoxStesti"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "136
+"
+label_settings = ExtResource("7_xkfdm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxKrasa" type="HBoxContainer" parent="Atributy/Vbox_container"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Atributy/Vbox_container/HBoxKrasa"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat_label" type="Label" parent="Atributy/Vbox_container/HBoxKrasa"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+text = "Krása"
+label_settings = ExtResource("7_xkfdm")
+vertical_alignment = 1
+
+[node name="krasa" type="Label" parent="Atributy/Vbox_container/HBoxKrasa"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "20%"
+label_settings = ExtResource("7_xkfdm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HboxMagie" type="HBoxContainer" parent="Atributy/Vbox_container"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="Atributy/Vbox_container/HboxMagie"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat_label" type="Label" parent="Atributy/Vbox_container/HboxMagie"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+text = "Magie"
+label_settings = ExtResource("7_xkfdm")
+vertical_alignment = 1
+
+[node name="magie" type="Label" parent="Atributy/Vbox_container/HboxMagie"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "12
+"
+label_settings = ExtResource("7_xkfdm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Zbranove_dovednosti" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+offset_left = 1395.0
+offset_top = 693.0
+offset_right = 1856.0
+offset_bottom = 1019.0
+
+[node name="Panel_bcg" type="TextureRect" parent="Zbranove_dovednosti"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("10_avk1q")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="Zbranove_dovednosti/Panel_bcg"]
+layout_mode = 2
+offset_top = -86.0
+offset_right = 461.0
+text = "Ovládání zbraní"
+label_settings = ExtResource("6_c0laq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Vbox_container" type="VBoxContainer" parent="Zbranove_dovednosti"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="HBoxJednorucni" type="HBoxContainer" parent="Zbranove_dovednosti/Vbox_container"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Zbranove_dovednosti/Vbox_container/HBoxJednorucni"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat_label" type="Label" parent="Zbranove_dovednosti/Vbox_container/HBoxJednorucni"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+text = "Jednoruční"
+label_settings = ExtResource("7_xkfdm")
+vertical_alignment = 1
+
+[node name="jednorucni" type="Label" parent="Zbranove_dovednosti/Vbox_container/HBoxJednorucni"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "42%
+"
+label_settings = ExtResource("7_xkfdm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hbox_Obourucni" type="HBoxContainer" parent="Zbranove_dovednosti/Vbox_container"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Zbranove_dovednosti/Vbox_container/Hbox_Obourucni"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat_label" type="Label" parent="Zbranove_dovednosti/Vbox_container/Hbox_Obourucni"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+text = "Obouruční"
+label_settings = ExtResource("7_xkfdm")
+vertical_alignment = 1
+
+[node name="obourucni" type="Label" parent="Zbranove_dovednosti/Vbox_container/Hbox_Obourucni"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "-5%
+"
+label_settings = ExtResource("7_xkfdm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxTycove" type="HBoxContainer" parent="Zbranove_dovednosti/Vbox_container"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Zbranove_dovednosti/Vbox_container/HBoxTycove"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat_label" type="Label" parent="Zbranove_dovednosti/Vbox_container/HBoxTycove"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+text = "Tyčové"
+label_settings = ExtResource("7_xkfdm")
+vertical_alignment = 1
+
+[node name="tycove" type="Label" parent="Zbranove_dovednosti/Vbox_container/HBoxTycove"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "3
+"
+label_settings = ExtResource("7_xkfdm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxLuky" type="HBoxContainer" parent="Zbranove_dovednosti/Vbox_container"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Zbranove_dovednosti/Vbox_container/HBoxLuky"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat_label" type="Label" parent="Zbranove_dovednosti/Vbox_container/HBoxLuky"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+text = "Luky"
+label_settings = ExtResource("7_xkfdm")
+vertical_alignment = 1
+
+[node name="luky" type="Label" parent="Zbranove_dovednosti/Vbox_container/HBoxLuky"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "20%"
+label_settings = ExtResource("7_xkfdm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxKuse" type="HBoxContainer" parent="Zbranove_dovednosti/Vbox_container"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Zbranove_dovednosti/Vbox_container/HBoxKuse"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat_label" type="Label" parent="Zbranove_dovednosti/Vbox_container/HBoxKuse"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+text = "Kuše"
+label_settings = ExtResource("7_xkfdm")
+vertical_alignment = 1
+
+[node name="kuse" type="Label" parent="Zbranove_dovednosti/Vbox_container/HBoxKuse"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "136
+"
+label_settings = ExtResource("7_xkfdm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxVrhaci" type="HBoxContainer" parent="Zbranove_dovednosti/Vbox_container"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Zbranove_dovednosti/Vbox_container/HBoxVrhaci"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat_label" type="Label" parent="Zbranove_dovednosti/Vbox_container/HBoxVrhaci"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+text = "Vrhací"
+label_settings = ExtResource("7_xkfdm")
+vertical_alignment = 1
+
+[node name="vrhaci" type="Label" parent="Zbranove_dovednosti/Vbox_container/HBoxVrhaci"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "20%"
+label_settings = ExtResource("7_xkfdm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dovednosti" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 38.0
+offset_top = 885.0
+offset_right = 1329.0
+offset_bottom = 1080.0
+
+[node name="Panel_bcg" type="TextureRect" parent="Dovednosti"]
+self_modulate = Color(1, 1, 1, 0.407843)
+layout_mode = 2
+texture = ExtResource("11_o70p5")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="Dovednosti/Panel_bcg"]
+layout_mode = 2
+offset_top = -65.0
+offset_right = 1291.0
+offset_bottom = 9.0
+text = "Dovednosti"
+label_settings = ExtResource("6_c0laq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dovednosti_values" type="Label" parent="Dovednosti"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Husbandry (5), minecraft (3), aapexing (2), toaster (2),Husbandry (5), minecraft (3), aapexing (2), toaster (2),Husbandry (5), minecraft (3), aapexing (2), toaster (2),"
+label_settings = SubResource("LabelSettings_jc0ni")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Quit_button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1170.0
+offset_top = 73.0
+offset_right = 1405.0
+offset_bottom = 291.0
+texture_normal = ExtResource("14_0bmvp")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Quit_button"]
+layout_mode = 0
+offset_right = 235.0
+offset_bottom = 218.0
+text = "Close"
+label_settings = SubResource("LabelSettings_18m6g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Quit_button" to="." method="_on_quit_button_pressed"]

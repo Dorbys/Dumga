@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Character_save" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/saving/character_save.gd" id="1_vdfc8"]
+
+[resource]
+script = ExtResource("1_vdfc8")
+character_name = "newd"
+poskozeni_zbrane = "2"
+HP = "2"
+MP = "2"
+stamina = "2"
+brneni = "2"
+magicka_odolnost = "2"
+rychlost = "2"
+presnost = "2"
+uhyb = "2"
+CC_odolnost = "2"
+sila = "0"
+obratnost = "3"
+inteligence = "0"
+charisma = "0"
+vydrz = "0"
+stesti = "0"
+krasa = "0"
+magie = "0"
+jednorucni = "0"
+obourucni = "0"
+tycove = "0"
+luky = "0"
+kuse = "0"
+vrhaci = "0"
+dovednosti = "a"

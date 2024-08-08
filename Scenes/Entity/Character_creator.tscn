@@ -1,0 +1,1930 @@
+[gd_scene load_steps=20 format=3 uid="uid://c51h4einlnntx"]
+
+[ext_resource type="Script" path="res://Scripts/Input.gd" id="1_acdrm"]
+[ext_resource type="Texture2D" uid="uid://bm1qeedqymnvk" path="res://Assets/Textures/Texture1.jpg" id="2_kj52r"]
+[ext_resource type="LabelSettings" uid="uid://cibsqrx18unqm" path="res://Labelss/Character_creator/Character_creator_primary_attributes2.tres" id="4_h2pjy"]
+[ext_resource type="Script" path="res://Scripts/Character_creator/Minus.gd" id="5_fxi0k"]
+[ext_resource type="Script" path="res://Scripts/Character_creator/Plus.gd" id="5_upb1n"]
+[ext_resource type="LabelSettings" uid="uid://in4r1nl38wmn" path="res://Labelss/Character_creator/info_under_statpickers.tres" id="6_3wnri"]
+[ext_resource type="Texture2D" uid="uid://ds11650d3b3b3" path="res://Assets/UI/Pass_texture_edge.jpg" id="8_h2ugt"]
+[ext_resource type="Texture2D" uid="uid://dug547qy6s4wt" path="res://Assets/UI/PASS_texture_elsewhere.jpg" id="9_eoe5i"]
+[ext_resource type="Script" path="res://Scripts/Character_creator/Finish_creation.gd" id="10_jxqwr"]
+[ext_resource type="PackedScene" uid="uid://p52qsvnvmcos" path="res://Scenes/Warnings/Character_creator_done.tscn" id="11_ac0k0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iafry"]
+font_size = 65
+
+[sub_resource type="LabelSettings" id="LabelSettings_oy1i7"]
+font_size = 35
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_deqdm"]
+LineEdit/font_sizes/font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_tcdkl"]
+font_size = 44
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_2rtme"]
+Button/font_sizes/font_size = 50
+
+[sub_resource type="Theme" id="Theme_cwhf4"]
+LineEdit/font_sizes/font_size = 40
+
+[sub_resource type="Theme" id="Theme_oe1el"]
+LineEdit/font_sizes/font_size = 34
+
+[sub_resource type="LabelSettings" id="LabelSettings_x1435"]
+font_size = 80
+
+[sub_resource type="LabelSettings" id="LabelSettings_s6pnq"]
+font_size = 50
+
+[node name="Character_creator" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BCG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_kj52r")
+script = ExtResource("1_acdrm")
+
+[node name="Screen_name" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 108.0
+text = "Character creator"
+label_settings = SubResource("LabelSettings_iafry")
+horizontal_alignment = 1
+
+[node name="Name_picker" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 495.0
+offset_top = 97.0
+offset_right = 939.0
+offset_bottom = 236.0
+
+[node name="Title" type="Label" parent="Name_picker"]
+layout_mode = 0
+offset_right = 435.0
+offset_bottom = 52.0
+text = "Name:"
+label_settings = SubResource("LabelSettings_oy1i7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Character_name" type="LineEdit" parent="Name_picker"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 52.0
+offset_right = 444.0
+offset_bottom = 139.0
+theme = SubResource("Theme_deqdm")
+placeholder_text = "(Dorbys is taken)"
+alignment = 1
+
+[node name="Atributy" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_right = 589.0
+offset_bottom = 712.0
+scale = Vector2(0.8, 0.8)
+
+[node name="Panel_bcg" type="ColorRect" parent="Atributy"]
+layout_mode = 2
+
+[node name="Info" type="VBoxContainer" parent="Atributy/Panel_bcg"]
+layout_mode = 0
+offset_left = -6.0
+offset_top = 712.0
+offset_right = 565.0
+offset_bottom = 757.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Atributy/Panel_bcg/Info"]
+layout_mode = 2
+
+[node name="Earnable_label" type="Label" parent="Atributy/Panel_bcg/Info/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Earnable ingame:"
+label_settings = ExtResource("6_3wnri")
+
+[node name="Earnable_count" type="Label" parent="Atributy/Panel_bcg/Info/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "X
+"
+label_settings = ExtResource("6_3wnri")
+horizontal_alignment = 1
+
+[node name="Maximum_label" type="Label" parent="Atributy/Panel_bcg/Info/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Maximum:"
+label_settings = ExtResource("6_3wnri")
+
+[node name="Maximum_count" type="Label" parent="Atributy/Panel_bcg/Info/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "999"
+label_settings = ExtResource("6_3wnri")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Atributy"]
+layout_mode = 2
+
+[node name="Title_container" type="HBoxContainer" parent="Atributy/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Title" type="Label" parent="Atributy/VBoxContainer/Title_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 8.0
+text = "Atributy:"
+label_settings = SubResource("LabelSettings_tcdkl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Points_left" type="Label" parent="Atributy/VBoxContainer/Title_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "999"
+label_settings = SubResource("LabelSettings_tcdkl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Atributy/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="Atributy/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat" type="Label" parent="Atributy/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 4.0
+text = "Síla"
+label_settings = ExtResource("4_h2pjy")
+
+[node name="Minus" type="Button" parent="Atributy/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Atributy/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Atributy/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Atributy/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Atributy/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="Atributy/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat" type="Label" parent="Atributy/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 4.0
+text = "Obratnost"
+label_settings = ExtResource("4_h2pjy")
+
+[node name="Minus" type="Button" parent="Atributy/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Atributy/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Atributy/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Atributy/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Atributy/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="Atributy/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat" type="Label" parent="Atributy/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 4.0
+text = "Inteligence"
+label_settings = ExtResource("4_h2pjy")
+
+[node name="Minus" type="Button" parent="Atributy/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Atributy/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Atributy/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Atributy/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Atributy/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="Atributy/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat" type="Label" parent="Atributy/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 4.0
+text = "Charisma"
+label_settings = ExtResource("4_h2pjy")
+
+[node name="Minus" type="Button" parent="Atributy/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Atributy/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Atributy/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Atributy/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Atributy/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="Atributy/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat" type="Label" parent="Atributy/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 4.0
+text = "Výdrž"
+label_settings = ExtResource("4_h2pjy")
+
+[node name="Minus" type="Button" parent="Atributy/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Atributy/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Atributy/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Atributy/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="Atributy/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="Atributy/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat" type="Label" parent="Atributy/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 4.0
+text = "Štěstí"
+label_settings = ExtResource("4_h2pjy")
+
+[node name="Minus" type="Button" parent="Atributy/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Atributy/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Atributy/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Atributy/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="Atributy/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="Atributy/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat" type="Label" parent="Atributy/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 4.0
+text = "Krása"
+label_settings = ExtResource("4_h2pjy")
+
+[node name="Minus" type="Button" parent="Atributy/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Atributy/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Atributy/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Atributy/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="Atributy/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="Atributy/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat" type="Label" parent="Atributy/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 4.0
+text = "Magie"
+label_settings = ExtResource("4_h2pjy")
+
+[node name="Minus" type="Button" parent="Atributy/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Atributy/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Atributy/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Atributy/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Zbrane" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 608.0
+offset_right = 556.0
+offset_bottom = 1158.0
+scale = Vector2(0.8, 0.8)
+
+[node name="Panel_bcg" type="ColorRect" parent="Zbrane"]
+layout_mode = 2
+
+[node name="Info" type="VBoxContainer" parent="Zbrane/Panel_bcg"]
+layout_mode = 0
+offset_left = -6.0
+offset_top = 550.0
+offset_right = 536.0
+offset_bottom = 595.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Zbrane/Panel_bcg/Info"]
+layout_mode = 2
+
+[node name="Earnable_label" type="Label" parent="Zbrane/Panel_bcg/Info/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Earnable ingame:"
+label_settings = ExtResource("6_3wnri")
+
+[node name="Earnable_count" type="Label" parent="Zbrane/Panel_bcg/Info/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "X
+"
+label_settings = ExtResource("6_3wnri")
+horizontal_alignment = 1
+
+[node name="Maximum_label" type="Label" parent="Zbrane/Panel_bcg/Info/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Maximum:"
+label_settings = ExtResource("6_3wnri")
+
+[node name="Maximum_count" type="Label" parent="Zbrane/Panel_bcg/Info/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "999"
+label_settings = ExtResource("6_3wnri")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Zbrane"]
+layout_mode = 2
+
+[node name="Title_container" type="HBoxContainer" parent="Zbrane/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Title" type="Label" parent="Zbrane/VBoxContainer/Title_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 8.0
+text = "Zbraňové dovednosti:"
+label_settings = SubResource("LabelSettings_tcdkl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Points_left" type="Label" parent="Zbrane/VBoxContainer/Title_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "999"
+label_settings = SubResource("LabelSettings_tcdkl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Zbrane/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="Zbrane/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat" type="Label" parent="Zbrane/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 4.0
+text = "Jednoruční"
+label_settings = ExtResource("4_h2pjy")
+
+[node name="Minus" type="Button" parent="Zbrane/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Zbrane/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Zbrane/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Zbrane/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Zbrane/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="Zbrane/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat" type="Label" parent="Zbrane/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 4.0
+text = "Obouruční"
+label_settings = ExtResource("4_h2pjy")
+
+[node name="Minus" type="Button" parent="Zbrane/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Zbrane/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Zbrane/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Zbrane/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Zbrane/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="Zbrane/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat" type="Label" parent="Zbrane/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 4.0
+text = "Tyčové"
+label_settings = ExtResource("4_h2pjy")
+
+[node name="Minus" type="Button" parent="Zbrane/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Zbrane/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Zbrane/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Zbrane/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="Zbrane/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="Zbrane/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat" type="Label" parent="Zbrane/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 4.0
+text = "Luky"
+label_settings = ExtResource("4_h2pjy")
+
+[node name="Minus" type="Button" parent="Zbrane/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Zbrane/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Zbrane/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Zbrane/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="Zbrane/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="Zbrane/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat" type="Label" parent="Zbrane/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 4.0
+text = "Kuše"
+label_settings = ExtResource("4_h2pjy")
+
+[node name="Minus" type="Button" parent="Zbrane/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Zbrane/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Zbrane/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Zbrane/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="Zbrane/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="Zbrane/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat" type="Label" parent="Zbrane/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 4.0
+text = "Vrhací"
+label_settings = ExtResource("4_h2pjy")
+
+[node name="Minus" type="Button" parent="Zbrane/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Zbrane/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Zbrane/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Zbrane/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Dovednosti" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 1270.0
+offset_right = 1884.0
+offset_bottom = 1036.0
+
+[node name="Panel_bcg" type="ColorRect" parent="Dovednosti"]
+layout_mode = 2
+
+[node name="Info" type="VBoxContainer" parent="Dovednosti/Panel_bcg"]
+layout_mode = 0
+offset_top = 1036.0
+offset_right = 614.0
+offset_bottom = 1081.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Dovednosti/Panel_bcg/Info"]
+layout_mode = 2
+
+[node name="Earnable_label" type="Label" parent="Dovednosti/Panel_bcg/Info/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Earnable ingame:"
+label_settings = ExtResource("6_3wnri")
+
+[node name="Earnable_count" type="Label" parent="Dovednosti/Panel_bcg/Info/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "skills
+"
+label_settings = ExtResource("6_3wnri")
+horizontal_alignment = 1
+
+[node name="Maximum_label" type="Label" parent="Dovednosti/Panel_bcg/Info/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Maximum:"
+label_settings = ExtResource("6_3wnri")
+
+[node name="Maximum_count" type="Label" parent="Dovednosti/Panel_bcg/Info/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "999"
+label_settings = ExtResource("6_3wnri")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Dovednosti"]
+layout_mode = 2
+
+[node name="Title_container" type="HBoxContainer" parent="Dovednosti/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
+
+[node name="Title" type="Label" parent="Dovednosti/VBoxContainer/Title_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 5.0
+text = "Dovednosti:"
+label_settings = SubResource("LabelSettings_tcdkl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Points_left" type="Label" parent="Dovednosti/VBoxContainer/Title_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "999"
+label_settings = SubResource("LabelSettings_tcdkl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Dovednosti/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Stat" type="LineEdit" parent="Dovednosti/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme = SubResource("Theme_cwhf4")
+placeholder_text = "Nothing"
+alignment = 1
+
+[node name="Minus" type="Button" parent="Dovednosti/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Dovednosti/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Dovednosti/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Dovednosti/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Dovednosti/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Stat" type="LineEdit" parent="Dovednosti/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme = SubResource("Theme_cwhf4")
+placeholder_text = "Nothing"
+alignment = 1
+
+[node name="Minus" type="Button" parent="Dovednosti/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Dovednosti/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Dovednosti/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Dovednosti/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Dovednosti/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Stat" type="LineEdit" parent="Dovednosti/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme = SubResource("Theme_cwhf4")
+placeholder_text = "Nothing"
+alignment = 1
+
+[node name="Minus" type="Button" parent="Dovednosti/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Dovednosti/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Dovednosti/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Dovednosti/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Dovednosti/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Stat" type="LineEdit" parent="Dovednosti/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme = SubResource("Theme_cwhf4")
+placeholder_text = "Nothing"
+alignment = 1
+
+[node name="Minus" type="Button" parent="Dovednosti/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Dovednosti/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Dovednosti/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Dovednosti/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Dovednosti/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Stat" type="LineEdit" parent="Dovednosti/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme = SubResource("Theme_cwhf4")
+placeholder_text = "Nothing"
+alignment = 1
+
+[node name="Minus" type="Button" parent="Dovednosti/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Dovednosti/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Dovednosti/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Dovednosti/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="Dovednosti/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Stat" type="LineEdit" parent="Dovednosti/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme = SubResource("Theme_cwhf4")
+placeholder_text = "Nothing"
+alignment = 1
+
+[node name="Minus" type="Button" parent="Dovednosti/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Dovednosti/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Dovednosti/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Dovednosti/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="Dovednosti/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Stat" type="LineEdit" parent="Dovednosti/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme = SubResource("Theme_cwhf4")
+placeholder_text = "Nothing"
+alignment = 1
+
+[node name="Minus" type="Button" parent="Dovednosti/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Dovednosti/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Dovednosti/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Dovednosti/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="Dovednosti/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Stat" type="LineEdit" parent="Dovednosti/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme = SubResource("Theme_cwhf4")
+placeholder_text = "Nothing"
+alignment = 1
+
+[node name="Minus" type="Button" parent="Dovednosti/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Dovednosti/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Dovednosti/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Dovednosti/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="Dovednosti/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Stat" type="LineEdit" parent="Dovednosti/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme = SubResource("Theme_cwhf4")
+placeholder_text = "Nothing"
+alignment = 1
+
+[node name="Minus" type="Button" parent="Dovednosti/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Dovednosti/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Dovednosti/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Dovednosti/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="Dovednosti/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Stat" type="LineEdit" parent="Dovednosti/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme = SubResource("Theme_cwhf4")
+placeholder_text = "Nothing"
+alignment = 1
+
+[node name="Minus" type="Button" parent="Dovednosti/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Dovednosti/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Dovednosti/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Dovednosti/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer11" type="HBoxContainer" parent="Dovednosti/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Stat" type="LineEdit" parent="Dovednosti/VBoxContainer/HBoxContainer11"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme = SubResource("Theme_cwhf4")
+placeholder_text = "Nothing"
+alignment = 1
+
+[node name="Minus" type="Button" parent="Dovednosti/VBoxContainer/HBoxContainer11"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Dovednosti/VBoxContainer/HBoxContainer11"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Dovednosti/VBoxContainer/HBoxContainer11"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Dovednosti/VBoxContainer/HBoxContainer11"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer12" type="HBoxContainer" parent="Dovednosti/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Stat" type="LineEdit" parent="Dovednosti/VBoxContainer/HBoxContainer12"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+theme = SubResource("Theme_cwhf4")
+placeholder_text = "Nothing"
+alignment = 1
+
+[node name="Minus" type="Button" parent="Dovednosti/VBoxContainer/HBoxContainer12"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "-
+"
+script = ExtResource("5_fxi0k")
+
+[node name="Current" type="Label" parent="Dovednosti/VBoxContainer/HBoxContainer12"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = ExtResource("4_h2pjy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plus" type="Button" parent="Dovednosti/VBoxContainer/HBoxContainer12"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_2rtme")
+text = "+"
+script = ExtResource("5_upb1n")
+
+[node name="Control" type="Control" parent="Dovednosti/VBoxContainer/HBoxContainer12"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Staty" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 492.0
+offset_top = 345.0
+offset_right = 1436.0
+offset_bottom = 809.0
+scale = Vector2(0.8, 0.8)
+
+[node name="Panel_bcg" type="ColorRect" parent="Staty"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Staty"]
+layout_mode = 2
+
+[node name="Title_container" type="HBoxContainer" parent="Staty/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Title" type="Label" parent="Staty/VBoxContainer/Title_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 8.0
+text = "Staty:"
+label_settings = SubResource("LabelSettings_tcdkl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Points_left" type="Label" parent="Staty/VBoxContainer/Title_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "999"
+label_settings = SubResource("LabelSettings_tcdkl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Staty/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="Staty/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat" type="Label" parent="Staty/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 4.0
+text = "Poškození zbraně"
+label_settings = ExtResource("4_h2pjy")
+
+[node name="poskozeni_zbrane" type="LineEdit" parent="Staty/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme = SubResource("Theme_oe1el")
+placeholder_text = "x"
+alignment = 1
+
+[node name="Control" type="Control" parent="Staty/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Staty/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="Staty/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat" type="Label" parent="Staty/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 4.0
+text = "Životy"
+label_settings = ExtResource("4_h2pjy")
+
+[node name="HP" type="LineEdit" parent="Staty/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme = SubResource("Theme_oe1el")
+placeholder_text = "x"
+alignment = 1
+
+[node name="Control" type="Control" parent="Staty/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Staty/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="Staty/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat" type="Label" parent="Staty/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 4.0
+text = "Mana"
+label_settings = ExtResource("4_h2pjy")
+
+[node name="MP" type="LineEdit" parent="Staty/VBoxContainer/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme = SubResource("Theme_oe1el")
+placeholder_text = "x"
+alignment = 1
+
+[node name="Control" type="Control" parent="Staty/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Staty/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="Staty/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat" type="Label" parent="Staty/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 4.0
+text = "Stamina"
+label_settings = ExtResource("4_h2pjy")
+
+[node name="stamina" type="LineEdit" parent="Staty/VBoxContainer/HBoxContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme = SubResource("Theme_oe1el")
+placeholder_text = "x"
+alignment = 1
+
+[node name="Control" type="Control" parent="Staty/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Staty/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="Staty/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat" type="Label" parent="Staty/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 4.0
+text = "Brnění"
+label_settings = ExtResource("4_h2pjy")
+
+[node name="brneni" type="LineEdit" parent="Staty/VBoxContainer/HBoxContainer5"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme = SubResource("Theme_oe1el")
+placeholder_text = "x"
+alignment = 1
+
+[node name="Control" type="Control" parent="Staty/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="Staty/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="Staty/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat" type="Label" parent="Staty/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 4.0
+text = "Mag. odolnost"
+label_settings = ExtResource("4_h2pjy")
+
+[node name="magicka_odolnost" type="LineEdit" parent="Staty/VBoxContainer/HBoxContainer6"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme = SubResource("Theme_oe1el")
+placeholder_text = "x"
+alignment = 1
+
+[node name="Control" type="Control" parent="Staty/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="Staty/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="Staty/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat" type="Label" parent="Staty/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 4.0
+text = "Rychlost"
+label_settings = ExtResource("4_h2pjy")
+
+[node name="rychlost" type="LineEdit" parent="Staty/VBoxContainer/HBoxContainer7"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme = SubResource("Theme_oe1el")
+placeholder_text = "120"
+alignment = 1
+
+[node name="Control" type="Control" parent="Staty/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="Staty/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="Staty/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat" type="Label" parent="Staty/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 4.0
+text = "Přesnost"
+label_settings = ExtResource("4_h2pjy")
+
+[node name="presnost" type="LineEdit" parent="Staty/VBoxContainer/HBoxContainer8"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme = SubResource("Theme_oe1el")
+placeholder_text = "x"
+alignment = 1
+
+[node name="Control" type="Control" parent="Staty/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="Staty/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="Staty/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat" type="Label" parent="Staty/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 4.0
+text = "Úhyb"
+label_settings = ExtResource("4_h2pjy")
+
+[node name="uhyb" type="LineEdit" parent="Staty/VBoxContainer/HBoxContainer9"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme = SubResource("Theme_oe1el")
+placeholder_text = "x"
+alignment = 1
+
+[node name="Control" type="Control" parent="Staty/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="Staty/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="Staty/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Stat" type="Label" parent="Staty/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 4.0
+text = "Odolnost proti omráčení"
+label_settings = ExtResource("4_h2pjy")
+
+[node name="CC_odolnost" type="LineEdit" parent="Staty/VBoxContainer/HBoxContainer10"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme = SubResource("Theme_oe1el")
+placeholder_text = "x"
+alignment = 1
+
+[node name="Control" type="Control" parent="Staty/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Finish_creation" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 679.0
+offset_top = 918.0
+offset_right = 1017.0
+offset_bottom = 1049.0
+disabled = true
+texture_normal = ExtResource("8_h2ugt")
+texture_disabled = ExtResource("9_eoe5i")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("10_jxqwr")
+around_warning = ExtResource("11_ac0k0")
+
+[node name="Done" type="Label" parent="Finish_creation"]
+self_modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 0
+offset_right = 322.0
+offset_bottom = 113.0
+text = "Done"
+label_settings = SubResource("LabelSettings_x1435")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit_button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 985.0
+offset_top = 101.0
+offset_right = 1220.0
+offset_bottom = 319.0
+texture_normal = ExtResource("8_h2ugt")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Quit_button"]
+layout_mode = 0
+offset_right = 235.0
+offset_bottom = 218.0
+text = "Close"
+label_settings = SubResource("LabelSettings_s6pnq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="text_changed" from="Name_picker/Character_name" to="Finish_creation" method="_on_character_name_text_changed"]
+[connection signal="pressed" from="Atributy/VBoxContainer/HBoxContainer/Minus" to="Atributy/VBoxContainer/HBoxContainer/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Atributy/VBoxContainer/HBoxContainer/Plus" to="Atributy/VBoxContainer/HBoxContainer/Plus" method="_on_pressed"]
+[connection signal="pressed" from="Atributy/VBoxContainer/HBoxContainer2/Minus" to="Atributy/VBoxContainer/HBoxContainer2/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Atributy/VBoxContainer/HBoxContainer2/Plus" to="Atributy/VBoxContainer/HBoxContainer2/Plus" method="_on_pressed"]
+[connection signal="pressed" from="Atributy/VBoxContainer/HBoxContainer3/Minus" to="Atributy/VBoxContainer/HBoxContainer3/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Atributy/VBoxContainer/HBoxContainer3/Plus" to="Atributy/VBoxContainer/HBoxContainer3/Plus" method="_on_pressed"]
+[connection signal="pressed" from="Atributy/VBoxContainer/HBoxContainer4/Minus" to="Atributy/VBoxContainer/HBoxContainer4/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Atributy/VBoxContainer/HBoxContainer4/Plus" to="Atributy/VBoxContainer/HBoxContainer4/Plus" method="_on_pressed"]
+[connection signal="pressed" from="Atributy/VBoxContainer/HBoxContainer5/Minus" to="Atributy/VBoxContainer/HBoxContainer5/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Atributy/VBoxContainer/HBoxContainer5/Plus" to="Atributy/VBoxContainer/HBoxContainer5/Plus" method="_on_pressed"]
+[connection signal="pressed" from="Atributy/VBoxContainer/HBoxContainer6/Minus" to="Atributy/VBoxContainer/HBoxContainer6/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Atributy/VBoxContainer/HBoxContainer6/Plus" to="Atributy/VBoxContainer/HBoxContainer6/Plus" method="_on_pressed"]
+[connection signal="pressed" from="Atributy/VBoxContainer/HBoxContainer7/Minus" to="Atributy/VBoxContainer/HBoxContainer7/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Atributy/VBoxContainer/HBoxContainer7/Plus" to="Atributy/VBoxContainer/HBoxContainer7/Plus" method="_on_pressed"]
+[connection signal="pressed" from="Atributy/VBoxContainer/HBoxContainer8/Minus" to="Atributy/VBoxContainer/HBoxContainer8/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Atributy/VBoxContainer/HBoxContainer8/Plus" to="Atributy/VBoxContainer/HBoxContainer8/Plus" method="_on_pressed"]
+[connection signal="pressed" from="Zbrane/VBoxContainer/HBoxContainer3/Minus" to="Zbrane/VBoxContainer/HBoxContainer3/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Zbrane/VBoxContainer/HBoxContainer3/Plus" to="Zbrane/VBoxContainer/HBoxContainer3/Plus" method="_on_pressed"]
+[connection signal="pressed" from="Zbrane/VBoxContainer/HBoxContainer4/Minus" to="Zbrane/VBoxContainer/HBoxContainer4/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Zbrane/VBoxContainer/HBoxContainer4/Plus" to="Zbrane/VBoxContainer/HBoxContainer4/Plus" method="_on_pressed"]
+[connection signal="pressed" from="Zbrane/VBoxContainer/HBoxContainer5/Minus" to="Zbrane/VBoxContainer/HBoxContainer5/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Zbrane/VBoxContainer/HBoxContainer5/Plus" to="Zbrane/VBoxContainer/HBoxContainer5/Plus" method="_on_pressed"]
+[connection signal="pressed" from="Zbrane/VBoxContainer/HBoxContainer6/Minus" to="Zbrane/VBoxContainer/HBoxContainer6/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Zbrane/VBoxContainer/HBoxContainer6/Plus" to="Zbrane/VBoxContainer/HBoxContainer6/Plus" method="_on_pressed"]
+[connection signal="pressed" from="Zbrane/VBoxContainer/HBoxContainer7/Minus" to="Zbrane/VBoxContainer/HBoxContainer7/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Zbrane/VBoxContainer/HBoxContainer7/Plus" to="Zbrane/VBoxContainer/HBoxContainer7/Plus" method="_on_pressed"]
+[connection signal="pressed" from="Zbrane/VBoxContainer/HBoxContainer8/Minus" to="Zbrane/VBoxContainer/HBoxContainer8/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Zbrane/VBoxContainer/HBoxContainer8/Plus" to="Zbrane/VBoxContainer/HBoxContainer8/Plus" method="_on_pressed"]
+[connection signal="text_changed" from="Dovednosti/VBoxContainer/HBoxContainer/Stat" to="Finish_creation" method="_on_stat_text_changed"]
+[connection signal="pressed" from="Dovednosti/VBoxContainer/HBoxContainer/Minus" to="Dovednosti/VBoxContainer/HBoxContainer/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Dovednosti/VBoxContainer/HBoxContainer/Plus" to="Dovednosti/VBoxContainer/HBoxContainer/Plus" method="_on_pressed"]
+[connection signal="text_changed" from="Dovednosti/VBoxContainer/HBoxContainer2/Stat" to="Finish_creation" method="_on_stat_text_changed"]
+[connection signal="pressed" from="Dovednosti/VBoxContainer/HBoxContainer2/Minus" to="Dovednosti/VBoxContainer/HBoxContainer2/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Dovednosti/VBoxContainer/HBoxContainer2/Plus" to="Dovednosti/VBoxContainer/HBoxContainer2/Plus" method="_on_pressed"]
+[connection signal="text_changed" from="Dovednosti/VBoxContainer/HBoxContainer3/Stat" to="Finish_creation" method="_on_stat_text_changed"]
+[connection signal="pressed" from="Dovednosti/VBoxContainer/HBoxContainer3/Minus" to="Dovednosti/VBoxContainer/HBoxContainer3/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Dovednosti/VBoxContainer/HBoxContainer3/Plus" to="Dovednosti/VBoxContainer/HBoxContainer3/Plus" method="_on_pressed"]
+[connection signal="text_changed" from="Dovednosti/VBoxContainer/HBoxContainer4/Stat" to="Finish_creation" method="_on_stat_text_changed"]
+[connection signal="pressed" from="Dovednosti/VBoxContainer/HBoxContainer4/Minus" to="Dovednosti/VBoxContainer/HBoxContainer4/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Dovednosti/VBoxContainer/HBoxContainer4/Plus" to="Dovednosti/VBoxContainer/HBoxContainer4/Plus" method="_on_pressed"]
+[connection signal="text_changed" from="Dovednosti/VBoxContainer/HBoxContainer5/Stat" to="Finish_creation" method="_on_stat_text_changed"]
+[connection signal="pressed" from="Dovednosti/VBoxContainer/HBoxContainer5/Minus" to="Dovednosti/VBoxContainer/HBoxContainer5/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Dovednosti/VBoxContainer/HBoxContainer5/Plus" to="Dovednosti/VBoxContainer/HBoxContainer5/Plus" method="_on_pressed"]
+[connection signal="text_changed" from="Dovednosti/VBoxContainer/HBoxContainer6/Stat" to="Finish_creation" method="_on_stat_text_changed"]
+[connection signal="pressed" from="Dovednosti/VBoxContainer/HBoxContainer6/Minus" to="Dovednosti/VBoxContainer/HBoxContainer6/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Dovednosti/VBoxContainer/HBoxContainer6/Plus" to="Dovednosti/VBoxContainer/HBoxContainer6/Plus" method="_on_pressed"]
+[connection signal="text_changed" from="Dovednosti/VBoxContainer/HBoxContainer7/Stat" to="Finish_creation" method="_on_stat_text_changed"]
+[connection signal="pressed" from="Dovednosti/VBoxContainer/HBoxContainer7/Minus" to="Dovednosti/VBoxContainer/HBoxContainer7/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Dovednosti/VBoxContainer/HBoxContainer7/Plus" to="Dovednosti/VBoxContainer/HBoxContainer7/Plus" method="_on_pressed"]
+[connection signal="text_changed" from="Dovednosti/VBoxContainer/HBoxContainer8/Stat" to="Finish_creation" method="_on_stat_text_changed"]
+[connection signal="pressed" from="Dovednosti/VBoxContainer/HBoxContainer8/Minus" to="Dovednosti/VBoxContainer/HBoxContainer8/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Dovednosti/VBoxContainer/HBoxContainer8/Plus" to="Dovednosti/VBoxContainer/HBoxContainer8/Plus" method="_on_pressed"]
+[connection signal="text_changed" from="Dovednosti/VBoxContainer/HBoxContainer9/Stat" to="Finish_creation" method="_on_stat_text_changed"]
+[connection signal="pressed" from="Dovednosti/VBoxContainer/HBoxContainer9/Minus" to="Dovednosti/VBoxContainer/HBoxContainer9/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Dovednosti/VBoxContainer/HBoxContainer9/Plus" to="Dovednosti/VBoxContainer/HBoxContainer9/Plus" method="_on_pressed"]
+[connection signal="text_changed" from="Dovednosti/VBoxContainer/HBoxContainer10/Stat" to="Finish_creation" method="_on_stat_text_changed"]
+[connection signal="pressed" from="Dovednosti/VBoxContainer/HBoxContainer10/Minus" to="Dovednosti/VBoxContainer/HBoxContainer10/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Dovednosti/VBoxContainer/HBoxContainer10/Plus" to="Dovednosti/VBoxContainer/HBoxContainer10/Plus" method="_on_pressed"]
+[connection signal="text_changed" from="Dovednosti/VBoxContainer/HBoxContainer11/Stat" to="Finish_creation" method="_on_stat_text_changed"]
+[connection signal="pressed" from="Dovednosti/VBoxContainer/HBoxContainer11/Minus" to="Dovednosti/VBoxContainer/HBoxContainer11/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Dovednosti/VBoxContainer/HBoxContainer11/Plus" to="Dovednosti/VBoxContainer/HBoxContainer11/Plus" method="_on_pressed"]
+[connection signal="text_changed" from="Dovednosti/VBoxContainer/HBoxContainer12/Stat" to="Finish_creation" method="_on_stat_text_changed"]
+[connection signal="pressed" from="Dovednosti/VBoxContainer/HBoxContainer12/Minus" to="Dovednosti/VBoxContainer/HBoxContainer12/Minus" method="_on_pressed"]
+[connection signal="pressed" from="Dovednosti/VBoxContainer/HBoxContainer12/Plus" to="Dovednosti/VBoxContainer/HBoxContainer12/Plus" method="_on_pressed"]
+[connection signal="text_changed" from="Staty/VBoxContainer/HBoxContainer/poskozeni_zbrane" to="Finish_creation" method="_on_stat_value_text_changed"]
+[connection signal="text_changed" from="Staty/VBoxContainer/HBoxContainer2/HP" to="Finish_creation" method="_on_stat_value_text_changed"]
+[connection signal="text_changed" from="Staty/VBoxContainer/HBoxContainer3/MP" to="Finish_creation" method="_on_stat_value_text_changed"]
+[connection signal="text_changed" from="Staty/VBoxContainer/HBoxContainer4/stamina" to="Finish_creation" method="_on_stat_value_text_changed"]
+[connection signal="text_changed" from="Staty/VBoxContainer/HBoxContainer5/brneni" to="Finish_creation" method="_on_stat_value_text_changed"]
+[connection signal="text_changed" from="Staty/VBoxContainer/HBoxContainer6/magicka_odolnost" to="Finish_creation" method="_on_stat_value_text_changed"]
+[connection signal="text_changed" from="Staty/VBoxContainer/HBoxContainer7/rychlost" to="Finish_creation" method="_on_stat_value_text_changed"]
+[connection signal="text_changed" from="Staty/VBoxContainer/HBoxContainer8/presnost" to="Finish_creation" method="_on_stat_value_text_changed"]
+[connection signal="text_changed" from="Staty/VBoxContainer/HBoxContainer9/uhyb" to="Finish_creation" method="_on_stat_value_text_changed"]
+[connection signal="text_changed" from="Staty/VBoxContainer/HBoxContainer10/CC_odolnost" to="Finish_creation" method="_on_stat_value_text_changed"]
+[connection signal="pressed" from="Finish_creation" to="Finish_creation" method="_on_pressed"]
+[connection signal="pressed" from="Quit_button" to="Finish_creation" method="_on_quit_button_pressed"]

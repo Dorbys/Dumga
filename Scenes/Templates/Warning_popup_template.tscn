@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://gf0878150q6h"]
+
+[ext_resource type="Script" path="res://Scripts/No_action_taken_warning.gd" id="1_un5sd"]
+[ext_resource type="Theme" uid="uid://b7rhot7w5e43n" path="res://Themes/Button_font_t1.tres" id="2_w62r6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vdq4m"]
+font_size = 44
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Around_warning" type="TextureButton"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("1_un5sd")
+
+[node name="Warning_window" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 503.0
+offset_top = 379.0
+offset_right = 1503.0
+offset_bottom = 659.0
+color = Color(0, 0.721569, 1, 1)
+
+[node name="Label" type="Label" parent="Warning_window"]
+layout_mode = 0
+offset_right = 1000.0
+offset_bottom = 140.0
+text = "You sure?"
+label_settings = SubResource("LabelSettings_vdq4m")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="YES" type="Button" parent="Warning_window"]
+layout_mode = 0
+offset_top = 140.0
+offset_right = 490.0
+offset_bottom = 280.0
+theme = ExtResource("2_w62r6")
+text = "Yes"
+
+[node name="NO" type="Button" parent="Warning_window"]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 140.0
+offset_right = 1000.0
+offset_bottom = 280.0
+theme = ExtResource("2_w62r6")
+text = "No"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="pressed" from="Warning_window/YES" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="Warning_window/NO" to="." method="_on_no_pressed"]

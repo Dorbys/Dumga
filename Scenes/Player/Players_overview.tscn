@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://gqcocpemlqnj"]
+
+[ext_resource type="Texture2D" uid="uid://b1sjkun60r7sx" path="res://Assets/pfps/DORBYS.png" id="1_3html"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 813.0
+offset_bottom = 435.0
+texture = ExtResource("1_3html")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 474.0
+offset_right = 1671.0
+offset_bottom = 1499.0
+text = "This was supposed to be what GM uses to check on all players, overview with main stats and where he acesses player profiles with all info"

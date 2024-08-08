@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://jvf6rloi2ddp"]
+
+[ext_resource type="Script" path="res://Scripts/Whos_turn.gd" id="1_ggeom"]
+[ext_resource type="Texture2D" uid="uid://bp3xmvqw0rs1p" path="res://Assets/UI/Do_smt.jpg" id="1_htgf4"]
+[ext_resource type="PackedScene" uid="uid://dfu7epclg567o" path="res://Scenes/No_action_taken_warning.tscn" id="2_byeuy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lnp7q"]
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vuscp"]
+font_size = 48
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Whos_turn" type="ColorRect"]
+offset_left = 728.0
+offset_right = 1428.0
+offset_bottom = 200.0
+color = Color(0, 1, 1, 1)
+script = ExtResource("1_ggeom")
+warning_window = ExtResource("2_byeuy")
+
+[node name="Player_label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 700.0
+offset_bottom = 200.0
+text = "It's Dorbys's turn"
+label_settings = SubResource("LabelSettings_lnp7q")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Do_something" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 816.0
+offset_right = 1192.0
+offset_bottom = 222.0
+texture_normal = ExtResource("1_htgf4")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Do_something"]
+layout_mode = 0
+offset_right = 376.0
+offset_bottom = 222.0
+text = "Do something"
+label_settings = SubResource("LabelSettings_vuscp")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="Do_something" to="." method="_on_do_something_pressed"]

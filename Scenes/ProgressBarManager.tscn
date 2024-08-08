@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://5tkisp7kb6dq"]
+
+[ext_resource type="Script" path="res://Scripts/ProgressBarManager.gd" id="1_hcgpc"]
+[ext_resource type="PackedScene" uid="uid://bs8qocs4b5x1l" path="res://Scenes/PlayerTurnBar.tscn" id="2_uoque"]
+
+[node name="Manager" type="ColorRect"]
+z_index = -4096
+offset_right = 1160.0
+offset_bottom = 160.0
+color = Color(0, 0.14902, 1, 0.415686)
+script = ExtResource("1_hcgpc")
+progress_bar = ExtResource("2_uoque")

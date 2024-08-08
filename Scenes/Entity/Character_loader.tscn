@@ -1,0 +1,961 @@
+[gd_scene load_steps=9 format=3 uid="uid://dhi3bkwihelg1"]
+
+[ext_resource type="Script" path="res://Scripts/Character_creator/Character_loader.gd" id="1_67pcw"]
+[ext_resource type="Texture2D" uid="uid://defo1msh68o0" path="res://Assets/Textures/light_papyrus.jpg" id="1_kneyj"]
+[ext_resource type="Script" path="res://Scripts/Input.gd" id="2_mi8oe"]
+[ext_resource type="Texture2D" uid="uid://bm1qeedqymnvk" path="res://Assets/Textures/Texture1.jpg" id="3_cpstp"]
+[ext_resource type="PackedScene" uid="uid://cshblwoxx0r43" path="res://Scenes/Entity/Character_button.tscn" id="4_5lsir"]
+[ext_resource type="Texture2D" uid="uid://ds11650d3b3b3" path="res://Assets/UI/Pass_texture_edge.jpg" id="6_vypgf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_71v10"]
+font_size = 60
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7l2jv"]
+font_size = 34
+
+[node name="Character_loader" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_67pcw")
+character_button = ExtResource("4_5lsir")
+
+[node name="BCG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_kneyj")
+script = ExtResource("2_mi8oe")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_top = -9.0
+offset_right = 1920.0
+offset_bottom = 99.0
+text = "Character loader"
+label_settings = SubResource("LabelSettings_71v10")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 72.0
+offset_right = 1915.0
+offset_bottom = 1078.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Slot1" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer/Slot1"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot2" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer/Slot2"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot3" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer/Slot3"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot4" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer/Slot4"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot5" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer/Slot5"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot6" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer/Slot6"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot7" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer/Slot7"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot8" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer/Slot8"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot9" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer/Slot9"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot10" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer/Slot10"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot11" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer/Slot11"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot12" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer/Slot12"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Slot1" type="PanelContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer2/Slot1"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot2" type="PanelContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer2/Slot2"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot3" type="PanelContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer2/Slot3"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot4" type="PanelContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer2/Slot4"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot5" type="PanelContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer2/Slot5"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot6" type="PanelContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer2/Slot6"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot7" type="PanelContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer2/Slot7"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot8" type="PanelContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer2/Slot8"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot9" type="PanelContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer2/Slot9"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot10" type="PanelContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer2/Slot10"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot11" type="PanelContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer2/Slot11"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot12" type="PanelContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer2/Slot12"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Slot1" type="PanelContainer" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer3/Slot1"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot2" type="PanelContainer" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer3/Slot2"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot3" type="PanelContainer" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer3/Slot3"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot4" type="PanelContainer" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer3/Slot4"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot5" type="PanelContainer" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer3/Slot5"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot6" type="PanelContainer" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer3/Slot6"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot7" type="PanelContainer" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer3/Slot7"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot8" type="PanelContainer" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer3/Slot8"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot9" type="PanelContainer" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer3/Slot9"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot10" type="PanelContainer" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer3/Slot10"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot11" type="PanelContainer" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer3/Slot11"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot12" type="PanelContainer" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer3/Slot12"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Slot1" type="PanelContainer" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer4/Slot1"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot2" type="PanelContainer" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer4/Slot2"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot3" type="PanelContainer" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer4/Slot3"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot4" type="PanelContainer" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer4/Slot4"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot5" type="PanelContainer" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer4/Slot5"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot6" type="PanelContainer" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer4/Slot6"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot7" type="PanelContainer" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer4/Slot7"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot8" type="PanelContainer" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer4/Slot8"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot9" type="PanelContainer" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer4/Slot9"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot10" type="PanelContainer" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer4/Slot10"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot11" type="PanelContainer" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer4/Slot11"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot12" type="PanelContainer" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer4/Slot12"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Slot1" type="PanelContainer" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer5/Slot1"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot2" type="PanelContainer" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer5/Slot2"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot3" type="PanelContainer" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer5/Slot3"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot4" type="PanelContainer" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer5/Slot4"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot5" type="PanelContainer" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer5/Slot5"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot6" type="PanelContainer" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer5/Slot6"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot7" type="PanelContainer" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer5/Slot7"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot8" type="PanelContainer" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer5/Slot8"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot9" type="PanelContainer" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer5/Slot9"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot10" type="PanelContainer" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer5/Slot10"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot11" type="PanelContainer" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer5/Slot11"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot12" type="PanelContainer" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer5/Slot12"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Slot1" type="PanelContainer" parent="VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer6/Slot1"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot2" type="PanelContainer" parent="VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer6/Slot2"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot3" type="PanelContainer" parent="VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer6/Slot3"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot4" type="PanelContainer" parent="VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer6/Slot4"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot5" type="PanelContainer" parent="VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer6/Slot5"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot6" type="PanelContainer" parent="VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer6/Slot6"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot7" type="PanelContainer" parent="VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer6/Slot7"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot8" type="PanelContainer" parent="VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer6/Slot8"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot9" type="PanelContainer" parent="VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer6/Slot9"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot10" type="PanelContainer" parent="VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer6/Slot10"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot11" type="PanelContainer" parent="VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer6/Slot11"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot12" type="PanelContainer" parent="VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer6/Slot12"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Slot1" type="PanelContainer" parent="VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer7/Slot1"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot2" type="PanelContainer" parent="VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer7/Slot2"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot3" type="PanelContainer" parent="VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer7/Slot3"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot4" type="PanelContainer" parent="VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer7/Slot4"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot5" type="PanelContainer" parent="VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer7/Slot5"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot6" type="PanelContainer" parent="VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer7/Slot6"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot7" type="PanelContainer" parent="VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer7/Slot7"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot8" type="PanelContainer" parent="VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer7/Slot8"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot9" type="PanelContainer" parent="VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer7/Slot9"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot10" type="PanelContainer" parent="VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer7/Slot10"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot11" type="PanelContainer" parent="VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer7/Slot11"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot12" type="PanelContainer" parent="VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer7/Slot12"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Slot1" type="PanelContainer" parent="VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer8/Slot1"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot2" type="PanelContainer" parent="VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer8/Slot2"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot3" type="PanelContainer" parent="VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer8/Slot3"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot4" type="PanelContainer" parent="VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer8/Slot4"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot5" type="PanelContainer" parent="VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer8/Slot5"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot6" type="PanelContainer" parent="VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer8/Slot6"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot7" type="PanelContainer" parent="VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer8/Slot7"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot8" type="PanelContainer" parent="VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer8/Slot8"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot9" type="PanelContainer" parent="VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer8/Slot9"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot10" type="PanelContainer" parent="VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer8/Slot10"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot11" type="PanelContainer" parent="VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer8/Slot11"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Slot12" type="PanelContainer" parent="VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="slot_bcg" type="TextureRect" parent="VBoxContainer/HBoxContainer8/Slot12"]
+layout_mode = 2
+texture = ExtResource("3_cpstp")
+expand_mode = 1
+
+[node name="Quit_button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1652.0
+offset_top = 4.0
+offset_right = 1910.0
+offset_bottom = 67.0
+texture_normal = ExtResource("6_vypgf")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Quit_button"]
+layout_mode = 0
+offset_right = 258.0
+offset_bottom = 63.0
+text = "Close"
+label_settings = SubResource("LabelSettings_7l2jv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Quit_button" to="." method="_on_quit_button_pressed"]

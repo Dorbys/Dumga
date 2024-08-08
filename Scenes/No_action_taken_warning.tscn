@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfu7epclg567o"]
+
+[ext_resource type="Theme" uid="uid://b7rhot7w5e43n" path="res://Themes/Button_font_t1.tres" id="1_4b0ea"]
+[ext_resource type="Script" path="res://Scripts/No_action_taken_warning.gd" id="1_lgbm8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vdq4m"]
+font_size = 44
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Around_warning" type="TextureButton"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("1_lgbm8")
+
+[node name="Warning_window" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 503.0
+offset_top = 379.0
+offset_right = 1503.0
+offset_bottom = 659.0
+color = Color(0, 0.721569, 1, 1)
+
+[node name="Label" type="Label" parent="Warning_window"]
+layout_mode = 0
+offset_right = 1000.0
+offset_bottom = 140.0
+text = "No action has been taken yet, 
+are you sure you want to end turn?"
+label_settings = SubResource("LabelSettings_vdq4m")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="YES" type="Button" parent="Warning_window"]
+layout_mode = 0
+offset_top = 140.0
+offset_right = 490.0
+offset_bottom = 280.0
+theme = ExtResource("1_4b0ea")
+text = "Yes"
+
+[node name="NO" type="Button" parent="Warning_window"]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 140.0
+offset_right = 1000.0
+offset_bottom = 280.0
+theme = ExtResource("1_4b0ea")
+text = "No"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="pressed" from="Warning_window/YES" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="Warning_window/NO" to="." method="_on_no_pressed"]
