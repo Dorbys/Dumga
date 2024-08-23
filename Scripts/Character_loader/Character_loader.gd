@@ -1,5 +1,7 @@
 extends Control
 
+
+
 @onready var slot_1 = $VBoxContainer/HBoxContainer/Slot1
 @onready var slot_2 = $VBoxContainer/HBoxContainer/Slot2
 @onready var slot_3 = $VBoxContainer/HBoxContainer/Slot3
@@ -97,9 +99,11 @@ extends Control
 @onready var slot8_11 = $VBoxContainer/HBoxContainer8/Slot11
 @onready var slot8_12 = $VBoxContainer/HBoxContainer8/Slot12
 
-# Called when the node enters the scene tree for the first time.
 
 @export var character_button: PackedScene
+@export var character_folder_button: PackedScene
+@export var dir_path:String
+#because we sending it to folder_button
 
 func _ready():
 	
@@ -113,20 +117,39 @@ slot6_1,slot6_2,slot6_3,slot6_4,slot6_5,slot6_6,slot6_7,slot6_8,slot6_9,slot6_10
 slot7_1,slot7_2,slot7_3,slot7_4,slot7_5,slot7_6,slot7_7,slot7_8,slot7_9,slot7_10,slot7_11,slot7_12,
 slot8_1,slot8_2,slot8_3,slot8_4,slot8_5,slot8_6,slot8_7,slot8_8,slot8_9,slot8_10,slot8_11,slot8_12]
 
-	var dir_path = "user://characters"
+#	var dir_path = "user://characters"
+	#is given to this scene when it gets instantiated
 	var dir = DirAccess.open(dir_path)
-	
+
 	dir.list_dir_begin()
 	var file_name = dir.get_next()
 	var index = 0
-	while file_name.ends_with(".tres"):
-		var another = character_button.instantiate()
-		another.saved_character = load(dir_path + "//" + file_name)
-		slot_array[index].add_child(another)
-		
-		file_name = dir.get_next()
-		index += 1
 
+	while file_name != "":
+
+		if dir.current_is_dir():
+			var another = character_folder_button.instantiate()
+			another.folder_path = dir_path + "/" + file_name
+			slot_array[index].add_child(another)
+			index += 1
+
+		file_name = dir.get_next()
+		
+	
+	dir = DirAccess.open(dir_path)
+	dir.list_dir_begin()
+	file_name = dir.get_next()
+	
+	while file_name != "":
+
+		if file_name.ends_with(".tres"):
+			var another = character_button.instantiate()
+			another.saved_character = load(dir_path + "//" + file_name)
+			slot_array[index].add_child(another)
+			index += 1
+
+		file_name = dir.get_next()
+		
 	
 
 

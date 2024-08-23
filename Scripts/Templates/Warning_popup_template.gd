@@ -1,6 +1,6 @@
 extends TextureButton
 
-@onready var manager = $"../../Manager"
+@export var caller: Node
 ############################### HERE
 
 
@@ -13,7 +13,7 @@ func _on_pressed():
 	#delete myself at the end of frame
 
 func _on_yes_pressed():
-	manager.end_turn()
+	caller.end_turn()
 	queue_free()
 	
 func _on_no_pressed():

@@ -4,6 +4,7 @@ extends Control
 
 @export var character_creator: PackedScene
 @export var character_loader: PackedScene
+@export var adding_characters: PackedScene
 
 
 
@@ -60,8 +61,14 @@ func _on_creator_button_pressed():
 
 func _on_loader_button_pressed():
 	var another = character_loader.instantiate()
+	another.dir_path = "user://characters"
 	ui_layer.add_child(another)
 
 
 func _on_exit_button_pressed():
 	get_tree().quit()
+
+
+func _on_fight_button_pressed():
+	var another = adding_characters.instantiate()
+	ui_layer.add_child(another)

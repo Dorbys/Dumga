@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://f4ga6l3v0riu"]
+
+[ext_resource type="Texture2D" uid="uid://ds11650d3b3b3" path="res://Assets/UI/Pass_texture_edge.jpg" id="1_secvs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e61cn"]
+font_size = 50
+
+[node name="Button_template" type="TextureButton"]
+offset_right = 235.0
+offset_bottom = 218.0
+texture_normal = ExtResource("1_secvs")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 235.0
+offset_bottom = 218.0
+text = "Button"
+label_settings = SubResource("LabelSettings_e61cn")
+horizontal_alignment = 1
+vertical_alignment = 1

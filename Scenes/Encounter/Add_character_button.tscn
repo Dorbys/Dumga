@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://brv5ccj0epmha"]
+
+[ext_resource type="Texture2D" uid="uid://ds11650d3b3b3" path="res://Assets/UI/Pass_texture_edge.jpg" id="1_j7r82"]
+[ext_resource type="Texture2D" uid="uid://dug547qy6s4wt" path="res://Assets/UI/PASS_texture_elsewhere.jpg" id="2_twgkv"]
+[ext_resource type="Script" path="res://Scripts/Encounter/Add_character_button.gd" id="2_w6ovh"]
+[ext_resource type="LabelSettings" uid="uid://ds5fugvwed3aa" path="res://Labelss/Adding_characters.tres" id="4_jt82p"]
+
+[node name="Button_template" type="TextureButton"]
+offset_right = 235.0
+offset_bottom = 218.0
+texture_normal = ExtResource("1_j7r82")
+texture_disabled = ExtResource("2_twgkv")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_w6ovh")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.5
+offset_top = -109.0
+offset_right = 117.5
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Button"
+label_settings = ExtResource("4_jt82p")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

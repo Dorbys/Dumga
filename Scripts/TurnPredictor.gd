@@ -1,5 +1,7 @@
 extends ColorRect
 
+@onready var manager = $"../Manager"
+
 var predicted_pfps = []
 var unit_speeds = []
 var texture_nodes = []
@@ -19,12 +21,7 @@ var topper
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	visible = false
-	for i in len(Base.PLAYER_PFPS_TEXTURES):
-		predicted_pfps.append(Base.PLAYER_PFPS_TEXTURES[i])
-		#we copy the profile pngs from the base script into our array
-	for i in len(Base.player_speeds):
-		unit_speeds.append(Base.player_speeds[i])
-		#we copy the player speeds from the base script into our array	
+	
 		
 	texture_nodes = [%T0, %T1, %T2, %T3, %T4, %T5, %T6, %T7, %T8, %T9, %T10]
 	#Using the Unique name of the node we don't have to @onready load it
@@ -34,8 +31,13 @@ func _ready():
 	#we don't fill progress_bars since Progbar manager does that
 	
 		
-
-
+func start_up():
+	for i in len(manager.character_array):
+		predicted_pfps.append(manager.pfp_array[i])
+		#we copy the profile pngs from the manager script into our array
+	for i in len(manager.character_array):
+		unit_speeds.append(int((manager.character_array[i].rychlost)))
+		#we copy the player speeds from the manager script into our array	
 
 
 
@@ -68,7 +70,7 @@ func make_prediction():
 		furthest_overstep = -1
 		speedest_index = -1
 		least_steps = 99999999999999999
-		for j in len(Base.player_speeds):
+		for j in len(manager.character_array):
 			my_steps = ceil(((Base.UNIT_TURN_PROGRESS_BAR_MAX_VALUE *(1 + completed_laps[j])) - progress_bars[j].value) / unit_speeds[j])
 			if my_steps < least_steps:
 				my_overstep = progress_bars[j].value  + (unit_speeds[j]*my_steps)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://v616n0nwq4l4"]
 
-[ext_resource type="Script" path="res://Scripts/Input.gd" id="1_5y0fk"]
+[ext_resource type="Script" path="res://Scripts/Encounter/Repeater_manager.gd" id="1_4msqh"]
 [ext_resource type="PackedScene" uid="uid://5tkisp7kb6dq" path="res://Scenes/ProgressBarManager.tscn" id="1_yuapw"]
 [ext_resource type="Texture2D" uid="uid://bm1qeedqymnvk" path="res://Assets/Textures/Texture1.jpg" id="2_8rh03"]
 [ext_resource type="Texture2D" uid="uid://c8pq6k3quy3ur" path="res://Assets/UI/tldr.jpg" id="2_unx66"]
@@ -20,7 +20,7 @@ outline_color = Color(0, 0, 0, 1)
 [node name="B" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_5y0fk")
+script = ExtResource("1_4msqh")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -4096

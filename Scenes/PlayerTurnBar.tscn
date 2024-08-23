@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bs8qocs4b5x1l"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerTurnBar.gd" id="1_m6le8"]
-[ext_resource type="Texture2D" uid="uid://b1sjkun60r7sx" path="res://Assets/pfps/DORBYS.png" id="2_u7ieh"]
+[ext_resource type="Texture2D" uid="uid://cwr576w33he4o" path="res://Assets/Textures/Missing_texture.png" id="2_8efs4"]
 
 [node name="ProgressBar" type="ProgressBar"]
 self_modulate = Color(1, 0.752941, 0.313726, 0)
@@ -23,5 +23,5 @@ layout_mode = 0
 offset_left = -80.0
 offset_right = 80.0
 offset_bottom = 160.0
-texture = ExtResource("2_u7ieh")
+texture = ExtResource("2_8efs4")
 expand_mode = 1

@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhi3bkwihelg1"]
+[gd_scene load_steps=10 format=3 uid="uid://dhi3bkwihelg1"]
 
-[ext_resource type="Script" path="res://Scripts/Character_creator/Character_loader.gd" id="1_67pcw"]
 [ext_resource type="Texture2D" uid="uid://defo1msh68o0" path="res://Assets/Textures/light_papyrus.jpg" id="1_kneyj"]
+[ext_resource type="Script" path="res://Scripts/Character_loader/Character_loader.gd" id="1_w3xyx"]
+[ext_resource type="PackedScene" uid="uid://cshblwoxx0r43" path="res://Scenes/Character_loader/Character_button.tscn" id="2_e5k7n"]
 [ext_resource type="Script" path="res://Scripts/Input.gd" id="2_mi8oe"]
 [ext_resource type="Texture2D" uid="uid://bm1qeedqymnvk" path="res://Assets/Textures/Texture1.jpg" id="3_cpstp"]
-[ext_resource type="PackedScene" uid="uid://cshblwoxx0r43" path="res://Scenes/Entity/Character_button.tscn" id="4_5lsir"]
+[ext_resource type="PackedScene" uid="uid://xno5i4akwboi" path="res://Scenes/Character_loader/Character_folder_button.tscn" id="3_vue33"]
 [ext_resource type="Texture2D" uid="uid://ds11650d3b3b3" path="res://Assets/UI/Pass_texture_edge.jpg" id="6_vypgf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_71v10"]
@@ -17,8 +18,9 @@ font_size = 34
 [node name="Character_loader" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_67pcw")
-character_button = ExtResource("4_5lsir")
+script = ExtResource("1_w3xyx")
+character_button = ExtResource("2_e5k7n")
+character_folder_button = ExtResource("3_vue33")
 
 [node name="BCG" type="TextureRect" parent="."]
 layout_mode = 0
@@ -953,7 +955,7 @@ stretch_mode = 0
 layout_mode = 0
 offset_right = 258.0
 offset_bottom = 63.0
-text = "Close"
+text = "Back"
 label_settings = SubResource("LabelSettings_7l2jv")
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -14,6 +14,7 @@ extends Control
 @onready var whos_turn = $"../Whos_turn"
 #to tell there who's turn it is
 
+@onready var manager = $"../Manager"
 
 
 
@@ -46,6 +47,12 @@ var started = false
 #used primarly as a warning 
 #nevermind, probly not gonna need it
 
+var character_array = [] 	#character.tres
+#this array will be filled with characters from "Adding_characters_to_encounter"
+
+var pfp_array = []		#.jpgs .pngs .jpegs already loaded 
+#so that we don't need to go through loading them from files elsewhere (PredictRect)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	visible = false
@@ -60,21 +67,39 @@ func start():
 		#so that progress bars don't start until we tell them to
 		#since their progression is being done here
 		
-		for i in 5:
+		for i in len(character_array):
 			var new_bar = progress_bar.instantiate()
 			#spawns a copy of the progressbar scene
 			
-			new_bar.unit_pfp = Base.PLAYER_PFPS_TEXTURES[i]
+			var current_character = character_array[i]
+			
+			var pfp_path = "user://profile_pictures/" + current_character.character_name 
+			var possible_extensions = [".png", ".jpg", ".jpeg"]
+			for extension in possible_extensions:
+				var full_path = pfp_path + extension
+				if FileAccess.file_exists(full_path):
+					var final_pfp = Image.load_from_file(full_path)
+					final_pfp = ImageTexture.create_from_image(final_pfp)
+					new_bar.unit_pfp = final_pfp
+					pfp_array.append(final_pfp)
+					print("pfp loaded " + extension)
+					break
+				print("NO pfp loaded " + extension)
+			
+			new_bar.unit_speed = int(current_character.rychlost)
 			#we set variables that have to be set before the scene actually enters
 			#the scene tree
-			new_bar.unit_speed = Base.player_speeds[i]
-			new_bar.name = Base.player_names[i]
+			new_bar.name = current_character.character_name
 			#this changes the name of a node, which are displayed 
-			#	on the left in the scene manager
+				#on the left in the scene manager
 			
 			predict_rect.progress_bars.append(new_bar)
 			#bar is added to array, but still doesn't actually exist
 			#the array is in the TurnPredictor node's script
+#			await get_tree().create_timer(0.1).timeout
+#			predict_rect.start_up()
+			#transfers information and pfps 
+				#about characters from manager over there
 			
 			add_child(new_bar)
 			#the progress bar enters scene tree as child of Manager
@@ -182,14 +207,14 @@ func _process(_delta):
 			#meaning it would render under them	
 				
 		switch_on_or_off()
-		print("it's " +str(Base.player_names[index_of_the_one_to_play]) +"'s turn")
+		print("it's " +str(manager.character_array[index_of_the_one_to_play].character_name) +"'s turn")
 		print("their values are: " +str(get_child(index_of_the_one_to_play).value) + " and " +str(get_child(index_of_the_one_to_play).check_value))
 		predict_rect.topper.render_on_top()
 		#the one to play should always render on top
 			#but if there are two with the same z index,
 			#the node with higher index is drawn on top
 		whos_turn.visible = true
-		whos_turn.new_units_turn(Base.player_names[index_of_the_one_to_play])
+		whos_turn.new_units_turn(manager.character_array[index_of_the_one_to_play].character_name)
 	###############			NOT PLAYING PART			########################
 	elif anyone_gonna_play == false:		
 	#could be 'else' instof 'elif' but this is looks clearer
@@ -209,7 +234,9 @@ func end_turn():
 	switch_on_or_off()
 
 func _on_starter_pressed():
-	start()
+#	start()
+	predict_rect.start_up()
 	visible = true
 	predict_rect.visible = true
 	predict_rect.make_prediction()
+	$"../Starter".visible = false

@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://xno5i4akwboi"]
+
+[ext_resource type="Texture2D" uid="uid://b8urhe4sd25i6" path="res://Assets/Icons/Black_folder.jpg" id="1_wttqd"]
+[ext_resource type="Script" path="res://Scripts/Character_loader/Character_folder_loader.gd" id="2_mnnf5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7e3ka"]
+font_size = 18
+
+[node name="Character_button" type="TextureButton"]
+offset_right = 155.0
+offset_bottom = 122.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("1_wttqd")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_mnnf5")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 152.0
+offset_bottom = 118.0
+text = "A very long name A very long name A very long name"
+label_settings = SubResource("LabelSettings_7e3ka")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

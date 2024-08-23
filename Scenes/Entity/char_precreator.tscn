@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cu70i2qnxxe7t"]
+[gd_scene load_steps=8 format=3 uid="uid://cu70i2qnxxe7t"]
 
 [ext_resource type="Texture2D" uid="uid://4kwycdn6gf6p" path="res://Assets/valerie.jpg" id="1_123ck"]
 [ext_resource type="Script" path="res://Scripts/Character_creator/char_precreator.gd" id="1_sumcf"]
 [ext_resource type="PackedScene" uid="uid://c51h4einlnntx" path="res://Scenes/Entity/Character_creator.tscn" id="2_c8brx"]
 [ext_resource type="Theme" uid="uid://b7rhot7w5e43n" path="res://Themes/Button_font_t1.tres" id="2_yfnrf"]
-[ext_resource type="PackedScene" uid="uid://dhi3bkwihelg1" path="res://Scenes/Entity/Character_loader.tscn" id="3_uynmp"]
+[ext_resource type="PackedScene" uid="uid://dhi3bkwihelg1" path="res://Scenes/Character_loader/Character_loader.tscn" id="3_pcbv5"]
+[ext_resource type="PackedScene" uid="uid://cg6fouxmmn0rr" path="res://Scenes/Encounter/Adding_characters_to_encounter.tscn" id="4_wo7vf"]
 [ext_resource type="Script" path="res://Scripts/Input.gd" id="5_hd07k"]
 
 [node name="char_precreator" type="Control"]
@@ -16,7 +17,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sumcf")
 character_creator = ExtResource("2_c8brx")
-character_loader = ExtResource("3_uynmp")
+character_loader = ExtResource("3_pcbv5")
+adding_characters = ExtResource("4_wo7vf")
 
 [node name="BCG" type="TextureRect" parent="."]
 layout_mode = 0
@@ -28,21 +30,29 @@ script = ExtResource("5_hd07k")
 
 [node name="Creator_button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1177.0
-offset_top = 192.0
-offset_right = 1694.0
-offset_bottom = 430.0
+offset_left = 1185.0
+offset_top = 90.0
+offset_right = 1702.0
+offset_bottom = 328.0
 theme = ExtResource("2_yfnrf")
 text = "Character creator"
 
 [node name="Loader_button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1177.0
-offset_top = 534.0
-offset_right = 1694.0
-offset_bottom = 772.0
+offset_left = 1185.0
+offset_top = 346.0
+offset_right = 1702.0
+offset_bottom = 584.0
 theme = ExtResource("2_yfnrf")
 text = "Character loader"
+
+[node name="Fight_button" type="Button" parent="."]
+offset_left = 1185.0
+offset_top = 603.0
+offset_right = 1702.0
+offset_bottom = 841.0
+theme = ExtResource("2_yfnrf")
+text = "Fight simulator"
 
 [node name="Exit_button" type="Button" parent="."]
 layout_mode = 0
@@ -57,4 +67,5 @@ text = "Exit"
 
 [connection signal="pressed" from="Creator_button" to="." method="_on_creator_button_pressed"]
 [connection signal="pressed" from="Loader_button" to="." method="_on_loader_button_pressed"]
+[connection signal="pressed" from="Fight_button" to="." method="_on_fight_button_pressed"]
 [connection signal="pressed" from="Exit_button" to="." method="_on_exit_button_pressed"]
